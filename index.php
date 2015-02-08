@@ -1,5 +1,5 @@
 <?php
-$pageTitle = "Unique T-shirts designed bya frog";
+$pageTitle = "Unique T-shirts designed by a frog";
 include('inc/header.php'); ?>
 
 		<div class="section banner">
