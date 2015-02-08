@@ -5,3 +5,5 @@
     <h1>Contact</h1>
 
   </div>
+
+<?php include('inc/footer.php'); ?>
