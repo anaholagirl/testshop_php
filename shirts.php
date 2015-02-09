@@ -57,12 +57,10 @@ include('inc/header.php'); ?>
       <ul class="products">
         <?php foreach($products as $product) {
             echo "<li>";
-        ?>
-          <a href="#">
-            <img src="<?php echo $product["img"]; ?>" alt="<?php echo $product["name"]; ?>">
-            <p>View Details</p>
-          </a>
-        <?php
+            echo '<a href="#">';
+            echo '<img src="' . $product["img"] .  '" alt="' . $product["name"] . '">';
+            echo "<p>View Details</p>";
+            echo "</a>";
             echo "</li>";
           }
         ?>
