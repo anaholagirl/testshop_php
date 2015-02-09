@@ -36,7 +36,7 @@ include('inc/header.php'); ?>
 
       <!-- conditional that checks the value of the GET variable 'status' -->
 
-      <?php if ($_GET["status"] == "thanks") { ?>
+      <?php if (isset($_GET["status"]) AND $_GET["status"] == "thanks") { ?>
         <p>Thanks for the email!  I&rsquo;ll be in touch shortly.</p>
       <?php } else { ?>
 
