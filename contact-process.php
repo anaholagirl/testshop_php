@@ -3,8 +3,9 @@
 $name = $_POST["name"];
 $email = $_POST["email"];
 $message = $_POST["message"];
-echo "Name: " . $name . "\n";
-echo "Email: " . $email . "\n";
-echo "Message: " . $message . "\n";
-
+$email_body = "";
+$email_body = $email_body . "Name: " . $name . "\n";
+$email_body = $email_body . "Email: " . $email . "\n";
+$email_body = $email_body . "Message: " . $message . "\n";
+echo $email_body
 ?>
