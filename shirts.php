@@ -4,7 +4,8 @@ $products = array();
   $products[101] = array(
     "name" => "Logo Shirt, Red",
     "img" => "img/shirts/shirt-101.jpg",
-    "price" => 18
+    "price" => 18,
+    "papal" => "907DLECFDRLKE"
   );
   $products[102] = array(
       "name" => "Mike the Frog Shirt, Black",
