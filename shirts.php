@@ -55,15 +55,17 @@ include('inc/header.php'); ?>
       <h1>Mike&rsquo;s Full Catalog of Shirts</h1>
 
       <ul class="products">
-        <?php foreach($products as $product) { ?>
-        <li>
+        <?php foreach($products as $product) {
+            echo "<li>";
+        ?>
           <a href="#">
             <img src="<?php echo $product["img"]; ?>" alt="<?php echo $product["name"]; ?>">
             <p>View Details</p>
           </a>
-
-        </li>
-        <?php } ?>
+        <?php
+            echo "</li>";
+          }
+        ?>
       </ul>
 
     </div>
