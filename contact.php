@@ -1,22 +1,27 @@
 <?php
 
-$name = $_POST["name"];
-$email = $_POST["email"];
-$message = $_POST["message"];
-$email_body = "";
-$email_body = $email_body . "Name: " . $name . "\n";
-$email_body = $email_body . "Email: " . $email . "\n";
-$email_body = $email_body . "Message: " . $message . "\n";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $name = $_POST["name"];
+  $email = $_POST["email"];
+  $message = $_POST["message"];
+  $email_body = "";
+  $email_body = $email_body . "Name: " . $name . "\n";
+  $email_body = $email_body . "Email: " . $email . "\n";
+  $email_body = $email_body . "Message: " . $message . "\n";
 
-// comment - TODO: Send Email
+  // comment - TODO: Send Email
 
-// redirect after we send the email
+  // redirect after we send the email
 
-header("Location: contact-thanks.php");
+  header("Location: contact-thanks.php");
+  exit;
 
-// this is useful so that if visitor uses back button on browser it won't send form twice
+  // this is useful so that if visitor uses back button on browser it won't send form twice
+}
 
 ?>
+
+<?php
 
 
 $pageTitle = "Contact Mike";
