@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   // redirect after we send the email
 
-  header("Location: contact-thanks.php");
+  header("Location: contact.php?status=thanks");
   exit;
 
   // this is useful so that if visitor uses back button on browser it won't send form twice
@@ -33,6 +33,12 @@ include('inc/header.php'); ?>
     <div class="wrapper">
 
       <h1>Contact</h1>
+
+      <!-- conditional that checks the value of the GET variable 'status' -->
+
+      <?php if ($_GET["status"] == "thanks") { ?>
+        <p>Thanks for the email!  I&rsquo;ll be in touch shortly.</p>
+      <?php } ?>
 
       <p>I&rsquo;d love to hear from you! Complete the form to send me an email.</p>
 
