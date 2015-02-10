@@ -11,9 +11,9 @@ include('inc/header.php'); ?>
       <h1>Mike&rsquo;s Full Catalog of Shirts</h1>
 
       <ul class="products">
-        <?php foreach($products as $product) {
+        <?php foreach($products as $product_id => $product) {
             echo "<li>";
-            echo '<a href="shirt.php?id=101">';
+            echo '<a href="shirt.php?id=' . $product_id . '">';
             echo '<img src="' . $product["img"] .  '" alt="' . $product["name"] . '">';
             echo "<p>View Details</p>";
             echo "</a>";
