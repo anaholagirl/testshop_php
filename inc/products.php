@@ -5,7 +5,7 @@ $products = array();
     "name" => "Logo Shirt, Red",
     "img" => "img/shirts/shirt-101.jpg",
     "price" => 18,
-    "papal" => "907DLECFDRLKE"
+    "paypal" => "907DLECFDRLKE"
   );
   $products[102] = array(
       "name" => "Mike the Frog Shirt, Black",
