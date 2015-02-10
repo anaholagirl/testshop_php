@@ -11,7 +11,9 @@ include("inc/header.php"); ?>
 
     <div class="wrapper">
 
-
+      <div class="breadcrumb">
+        <a href="shirts.php">Shirts</a> &gt; <?php echo $product["name"]; ?>
+      </div>
 
 
     </div>
