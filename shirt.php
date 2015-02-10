@@ -27,8 +27,8 @@ include("inc/header.php"); ?>
 
           <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
             <input type="hidden" name="cmd" value="_s-xclick">
-            <input type="hidden" name="hosted_button_id" value="907DLECFDRLKE">
-            <input type="hidden" name="item_name" value="Logo Shirt, Red">
+            <input type="hidden" name="hosted_button_id" value="<?php echo $product["paypal"]; ?>">
+            <input type="hidden" name="item_name" value="<?php echo $product["name"]; ?>">
             <table>
               <tr>
                 <th>
