@@ -2,13 +2,15 @@
 
 function get_list_view_html($product_id, $product) {
 
+  $output = "";
+
   //build HTML output
-  echo "<li>";
-  echo '<a href="shirt.php?id=' . $product_id . '">';
-  echo '<img src="' . $product["img"] .  '" alt="' . $product["name"] . '">';
-  echo "<p>View Details</p>";
-  echo "</a>";
-  echo "</li>";
+  $output = $output . "<li>";
+  $output = $output . '<a href="shirt.php?id=' . $product_id . '">';
+  $output = $output . '<img src="' . $product["img"] .  '" alt="' . $product["name"] . '">';
+  $output = $output . "<p>View Details</p>";
+  $output = $output . "</a>";
+  $output = $output . "</li>";
 
   return $output
 }
