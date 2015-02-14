@@ -54,12 +54,14 @@ include("inc/header.php"); ?>
                   <input type="hidden" name="on0" value="Size">
                   <label for="os0">Size</label>
                 </th>
-              <td><select name="os0" id="os0">
-                <option value="Small">Small </option>
-                <option value="Medium">Medium </option>
-                <option value="large">Large </option>
-                <option value="X-Large">X-Large </option>
-              </select></td></tr>
+              <td>
+                  <select name="os0" id="os0">
+                    <?php foreach($product["sizes"] as $size) { ?>
+                    <option value="<?php echo $size; ?>"><?php echo $size; ?> </option>
+                    <?php } ?>
+                  </select>
+                </td>
+              </tr>
             </table>
             <input type="submit" value="Add to Cart" name="submit">
           </form>
