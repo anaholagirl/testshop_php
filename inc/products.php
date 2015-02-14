@@ -1,5 +1,10 @@
 <?php
 
+function get_list_view_html($product_id, $product) {
+  //build HTML output
+  return $output
+}
+
 $products = array();
   $products[101] = array(
     "name" => "Logo Shirt, Red",
