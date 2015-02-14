@@ -8,14 +8,13 @@ if (isset($_GET["id"])) {
     $product = $products[$product_id]; // loading particular shirt you need with the product_id
     }
   }
-  //conditional to check if the product array exists
-  if (isset($product)) {
-    echo "We have a valid shirt.";
-  } else {
-    echo "We do not have a valid shirt: redirect!";
+  //negative conditional to check if the product array exists, if doesn't exist redirect to shirts.php page
+  if (!isset($product)) {
+    header("Location: shirts.php");
+    exit();
   }
 
-exit();
+
 /* use this code to see what happens when visitor enters directly shirt.php and puts in an invalid product_id
 echo "<pre>";
 var_dump($product_id);
