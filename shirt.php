@@ -6,14 +6,15 @@ if (isset($_GET["id"])) {
   //check that the product array has a shirt with that id in it
   if (isset($products[$product_id])) {
     $product = $products[$product_id]; // loading particular shirt you need with the product_id
-    echo "We have a valid shirt ID.";
-  } else {
-    echo "We have a shirt ID, but it is invalid.";
+    }
   }
-  //else block used to check if don't have valid product_id
-} else {
-  echo "We have no shirt ID.";
-}
+  //conditional to check if the product array exists
+  if (isset($product)) {
+    echo "We have a valid shirt.";
+  } else {
+    echo "We do not have a valid shirt: redirect!";
+  }
+
 exit();
 /* use this code to see what happens when visitor enters directly shirt.php and puts in an invalid product_id
 echo "<pre>";
