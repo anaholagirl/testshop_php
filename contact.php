@@ -35,11 +35,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
   $email_body = "";
-  $email_body = $email_body . "Name: " . $name . "\n";
-  $email_body = $email_body . "Email: " . $email . "\n";
-  $email_body = $email_body . "Message: " . $message . "\n";
+  $email_body = $email_body . "Name: " . $name . "<br>";
+  $email_body = $email_body . "Email: " . $email . "<br>";
+  $email_body = $email_body . "Message: " . $message . "<br>";
 
-  // comment - TODO: Send Email
+  $mail->SetFrom($email, $name);
+  $address = "orders@shirts4mike.com";
+  $mail->AddAddress($address, "Shirts 7 Mike");
+  $mail->Subject    = "Shirts 4 Mike Contact Form Submission | " . $name;
+  $mail->MsgHTML($email_body);
+//conditional if email was not sent successfully
+  if(!$mail->Send()) {
+    echo "There was a problem sending the email: " . $mail->ErrorInfo;
+    exit;
+  }
 
   // redirect after we send the email
 
