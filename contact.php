@@ -26,6 +26,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     exit;
   }
 
+  require_once("inc/phpmailer/class.phpmailer.php");
+  $mail = new PHPMailer();
+
+
+
   $email_body = "";
   $email_body = $email_body . "Name: " . $name . "\n";
   $email_body = $email_body . "Email: " . $email . "\n";
@@ -91,7 +96,7 @@ include('inc/header.php'); ?>
                 <textarea name="message" id="message"></textarea>
               </td>
             </tr>
-            <!-- add extra field you don't want to be filled as spam prevention -->
+            <!-- add extra field you don't want to be filled as spam prevention; should not display in browser -->
             <tr style="display: none;">
               <th>
                 <label for="address">Address</label>
