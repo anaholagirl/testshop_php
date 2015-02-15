@@ -1,9 +1,17 @@
 <?php
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $name = $_POST["name"];
-  $email = $_POST["email"];
-  $message = $_POST["message"];
+  $name = trim($_POST["name"]);
+  $email = trim($_POST["email"]);
+  $message = trim($_POST["message"]);
+  //trim value trims off white space(spaces, tabs & hard returns) from beginning and end of a piece of text
+
+  //check if name, email or message field is blank
+  if ($name == "" OR $email == "" OR $message == "") {
+    echo "You must specify a value for name, email address, and message.";
+    exit;
+  }
+
   $email_body = "";
   $email_body = $email_body . "Name: " . $name . "\n";
   $email_body = $email_body . "Email: " . $email . "\n";
