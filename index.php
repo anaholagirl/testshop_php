@@ -25,8 +25,14 @@ include('inc/header.php'); ?>
 
 				<?php include("inc/products.php"); ?>
 				<ul class="products">
-	        <?php foreach($products as $product_id => $product) {
-	            echo get_list_view_html($product_id, $product);
+	        <?php
+	        	$total_prducts = count($products);
+	        	$position = 0;
+	        	foreach($products as $product_id => $product) {
+	            $position = $position + 1;
+	            if ($total_products - $position < 4) {
+	            	echo get_list_view_html($product_id, $product);
+	          	}
 	          }
 	        ?>
 				</ul>
