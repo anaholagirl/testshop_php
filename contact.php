@@ -15,10 +15,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   //function to defend against spam form attacks, checks for a malicious value
   foreach( $_POST as $value ) {
     if( stripos($value, 'Content-Type:') !== FALSE ) {
-      echo "there was a problem with the information you entered.";
+      echo "There was a problem with the information you entered.";
       exit;
     }
 
+  }
+
+  if ($_POST["address"] != "") {
+    echo "Your form submission has an error."
+    exit;
   }
 
   $email_body = "";
@@ -86,6 +91,17 @@ include('inc/header.php'); ?>
                 <textarea name="message" id="message"></textarea>
               </td>
             </tr>
+            <!-- add extra field you don't want to be filled as spam prevention -->
+            <tr style="display: none;">
+              <th>
+                <label for="address">Address</label>
+              </th>
+              <td>
+                <input type="text" name="address" id="address">
+                <p>Humans (and frogs): please leave this field blank.</p>
+              </td>
+            </tr>
+
           </table>
           <input type="submit" value="Send">
 
