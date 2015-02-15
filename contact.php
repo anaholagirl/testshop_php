@@ -22,14 +22,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
   if ($_POST["address"] != "") {
-    echo "Your form submission has an error."
+    echo "Your form submission has an error.";
     exit;
   }
 
   require_once("inc/phpmailer/class.phpmailer.php");
   $mail = new PHPMailer();
 
-
+  if (!$mail->ValidateAddress($email)){
+    echo "You must specify a valid email address.";
+    exit;
+  }
 
   $email_body = "";
   $email_body = $email_body . "Name: " . $name . "\n";
@@ -50,10 +53,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <?php
 
-
 $pageTitle = "Contact Mike";
 $section = "contact";
-include('inc/header.php'); ?>
+include('inc/header.php');
+?>
 
   <div class="section page">
 
