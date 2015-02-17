@@ -23,4 +23,7 @@
 
   </div>
 
-  <div id="content">
+</body>
+</html>
+
+  <!-- <div id="content"> -->
